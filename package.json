@@ -1,0 +1,28 @@
+{
+  "name": "wheels",
+  "version": "1.0.0",
+  "description": "Use native JS and CSS to implement some common components.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sea-ice/wheels.git"
+  },
+  "keywords": [
+    "wheels",
+    "components",
+    "javascript",
+    "css"
+  ],
+  "author": "Jack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sea-ice/wheels/issues"
+  },
+  "homepage": "https://github.com/sea-ice/wheels#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
