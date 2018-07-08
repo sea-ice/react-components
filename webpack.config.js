@@ -1,7 +1,6 @@
-let path = require('path'),
-    webpack = require('webpack'),
-    CopyWebpackPlugin = require('copy-webpack-plugin'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin')
+let path = require('path')
+let webpack = require('webpack')
+let CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -19,9 +18,17 @@ module.exports = {
       use: 'babel-loader'
     }, {
       test: /\.css$/,
+      exclude: /examples\/assets/,
       use: [
         'style-loader', 
         'css-loader?modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+      ]
+    }, {
+      test: /\.css$/,
+      include: /examples\/assets/, // important
+      use: [
+        'style-loader', 
+        'css-loader'
       ]
     }]
   },
@@ -33,9 +40,6 @@ module.exports = {
     contentBase: resolve('./dist')
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: '[name].style.css'
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([{
       from: './examples/index.html',

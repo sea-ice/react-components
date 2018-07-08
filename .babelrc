@@ -1,7 +1,15 @@
 {
-    "presets": [
-      "env", 
-      "stage-0",
-      "react"
-    ]
+  "presets": [
+    "env", 
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    ["prismjs", {
+        "languages": ["javascript", "css", "markup"],
+        "plugins": ["line-numbers"],
+        "theme": "twilight",
+        "css": true
+    }]
+  ]
 }

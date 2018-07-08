@@ -13,8 +13,6 @@ export default class PaginatorButtons extends React.Component {
     this.turnToPage = this.turnToPage.bind(this)
   }
   componentWillUpdate (newProps) {
-    console.log(this.props.totalPages)
-    console.log(newProps.totalPages)
     // 此钩子方法中接收到的newProps为新的props，this.props则仍保存着原来的props
     if (this.props.totalPages > newProps.totalPages) {
       this.setState({
@@ -87,8 +85,7 @@ export default class PaginatorButtons extends React.Component {
     // styleName指定的类必须在对应的样式文件中定义
     let paginatorButtons = ({
       totalPages, 
-      currentPage, 
-      togglePageContinuously
+      currentPage
     }) => {
       let pageButtons = this.state.pageButtons.map(page => <a 
         href="javascript:void(0);" 
