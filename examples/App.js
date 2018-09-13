@@ -3,8 +3,9 @@ import Prism from 'prismjs'
 import CSSModules from 'react-css-modules'
 import styles from './app.css'
 
-import Paginator from '../web/paginator'
+import Paginator from '../web/Paginator'
 import MarkdownParser from '../web/MarkdownParser'
+import TreeShape from '../web/TreeShape'
 
 class App extends React.Component {
   constructor (props) {
@@ -36,6 +37,17 @@ class App extends React.Component {
   }
   render () {
     let {pageTitle, mdCompileResult} = this.state
+    let treeNodes = [{
+      label: 'hello',
+      children: [{
+        label: 'world'
+      }, {
+        label: 'front',
+        children: [{
+          label: 'end'
+        }]
+      }]
+    }]
     return <div>
       <fieldset>
         <legend>Paginator</legend>
@@ -58,6 +70,10 @@ class App extends React.Component {
             ref={ele => this.preview = ele}
           ></div>
         </div>
+      </fieldset>
+      <fieldset>
+        <legend>Tree Shape</legend>
+        <div><TreeShape nodes={treeNodes} /></div>
       </fieldset>
     </div>
   }
