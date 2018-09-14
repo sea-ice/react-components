@@ -1,12 +1,10 @@
 # wheels
 
-## Completed
-
-- Paginator
-
 ## Todo List
 
-- Form Validator
-- Image lazy load && Waterfall flow
-- Image Uploader
-- Real-time markdown parser
+- [x] Paginator
+- [x] Real-time markdown parser
+- [ ] Form Validator
+- [ ] Image lazy load && Waterfall flow
+- [ ] Infinite scroll
+- [ ] Draggable
