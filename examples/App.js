@@ -65,7 +65,6 @@ class App extends React.Component {
           </div>
           <div 
             styleName="md-preview__result"
-            className="md-preview__result"
             dangerouslySetInnerHTML={{__html: mdCompileResult}}
             ref={ele => this.preview = ele}
           ></div>
@@ -73,7 +72,7 @@ class App extends React.Component {
       </fieldset>
       <fieldset>
         <legend>Tree Shape</legend>
-        <div><TreeShape nodes={treeNodes} /></div>
+        <div styleName="tree-shape-wrapper"><TreeShape nodes={treeNodes} /></div>
       </fieldset>
     </div>
   }

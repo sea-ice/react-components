@@ -2,15 +2,39 @@
   box-sizing: border-box;
 }
 
+.closed-item {
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.item-label {
+  display: block;
+  line-height: 30px;
+}
+
 .icon {
   background-position: 50%;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.arrow-icon {
+.arrow-down {
+  composes: icon;
   display: block;
-  width: 30px;
-  height: 30px;
-  background
+  width: 20px;
+  height: 20px;
+  background-image: url(./arrow-down.svg);
+  transition: transform .5 ease-in-out;
+}
+
+.arrow-up {
+  composes: arrow-down;
+  transform: rotate(180deg);
 }

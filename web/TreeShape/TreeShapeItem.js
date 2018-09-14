@@ -9,28 +9,33 @@ class TreeShapeItem extends Component {
     this.state = {
       closed: true
     }
+    this.handleItemClick = this.handleItemClick.bind(this)
+  }
+
+  handleItemClick() {
+    let {closed} = this.state
+    this.setState({
+      closed: !closed
+    })
   }
 
   render() {
-    let {label, children} = this.props,
-        {closed} = this.state, icon
-    if (children && children.length) {
-      children = <ul>{children}</ul>
-    } else {
-      children = null
-    }
-    if (children) {
-      icon = <i styleName={`icon arrow-icon${closed ? ' arrow-up' : ''}`}></i>
-    } else {
-      icon = null
-    }
+    let {label, epoch, bgcolors, children} = this.props,
+        {closed} = this.state,
+        hasChildren = children && children.length
+    let subNodes = hasChildren ? <ul>{children}</ul> : null
+    let icon = subNodes ? <i styleName={closed ? 'arrow-up' : 'arrow-down'}></i> : null
+    
     return (
-      <li styleName="tree-shape-item">
-        <div styleName="label-wrapper">
-          <label>{label}</label>
+      <li 
+        styleName={`${closed ? 'closed-item' : 'tree-shape-item'}`} 
+        style={{backgroundColor: bgcolors[epoch]}}
+      >
+        <div styleName="label-wrapper" onClick={this.handleItemClick}>
+          <label styleName="item-label" style={{marginLeft: epoch * 20}}>{label}</label>
           {icon}
         </div>
-        {children}
+        {subNodes}
       </li>
     );
   }

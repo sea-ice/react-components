@@ -30,6 +30,14 @@ module.exports = {
         'style-loader', 
         'css-loader'
       ]
+    }, {
+      test: /\.(jpe?g|png|svg|gif)$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 8192
+        }
+      }]
     }]
   },
   devServer: {
