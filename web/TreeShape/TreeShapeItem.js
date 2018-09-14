@@ -1,11 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react'
+import CSSModules from 'react-css-modules'
+
+import styles from './tree-shape.css'
 
 class TreeShapeItem extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    label: PropTypes.string
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -14,19 +12,28 @@ class TreeShapeItem extends Component {
   }
 
   render() {
-    let {label, children} = this.props
+    let {label, children} = this.props,
+        {closed} = this.state, icon
     if (children && children.length) {
       children = <ul>{children}</ul>
     } else {
       children = null
     }
+    if (children) {
+      icon = <i styleName={`icon arrow-icon${closed ? ' arrow-up' : ''}`}></i>
+    } else {
+      icon = null
+    }
     return (
-      <li className="tree-shape-item">
-        <label>{label}</label>
+      <li styleName="tree-shape-item">
+        <div styleName="label-wrapper">
+          <label>{label}</label>
+          {icon}
+        </div>
         {children}
       </li>
     );
   }
 }
 
-export default Component;
+export default CSSModules(TreeShapeItem, styles);

@@ -1,14 +1,9 @@
 import React, {
-  Component,
-  PropTypes
+  Component
 } from 'react';
 import TreeShapeItem from './TreeShapeItem'
 
 class TreeShape extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-  };
-
   constructor(props) {
     super(props);
   }
@@ -35,4 +30,4 @@ class TreeShape extends Component {
   }
 }
 
-export default TreeShap;
+export default TreeShape;
