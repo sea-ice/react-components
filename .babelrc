@@ -10,6 +10,7 @@
         "plugins": ["line-numbers"],
         "theme": "twilight",
         "css": true
-    }]
+    }],
+    'react-hot-loader/babel'
   ]
 }

@@ -91,6 +91,7 @@ export default class PaginatorButtons extends React.Component {
         href="javascript:void(0);" 
         onClick={this.turnToPage}
         data-click-type="page-button"
+        key={page}
         styleName={
           currentPage === page ? 
           "page-button__focus" 

@@ -1,6 +1,7 @@
 import React, {
   Component
-} from 'react';
+} from 'react'
+import {hot} from 'react-hot-loader'
 import TreeShapeItem from './TreeShapeItem'
 
 class TreeShape extends Component {
@@ -12,8 +13,8 @@ class TreeShape extends Component {
 
   recursiveGenerate(nodes, epoch) {
     if (nodes && nodes.length) {
-      return nodes.map(node => <TreeShapeItem 
-        label={node.label} epoch={epoch} bgcolors={this.itemBgcolors}
+      return nodes.map((node, i) => <TreeShapeItem 
+        label={node.label} epoch={epoch} bgcolors={this.itemBgcolors} key={`${epoch}-${i}`}
       >
         {this.recursiveGenerate(node.children, epoch + 1)}
       </TreeShapeItem>)
@@ -61,4 +62,4 @@ class TreeShape extends Component {
   }
 }
 
-export default TreeShape;
+export default hot(module)(TreeShape);

@@ -12,7 +12,7 @@ export default class ItemsPerPage extends React.Component {
       defaultItemsPerPage,
       notifyItemsPerPageChange
     }) => {
-      let options = optionalItemsPerPage.map(val => <option value={val}>{val}</option>)
+      let options = optionalItemsPerPage.map(val => <option value={val} key={val}>{val}</option>)
       return <div>
         共 <span>{total}</span> 条记录
         每页显示

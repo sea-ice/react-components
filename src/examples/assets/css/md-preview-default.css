@@ -4,111 +4,119 @@ ul, ol {
   margin: 0;
 }
 
-.md-preview__result blockquote {
+.mdp__result blockquote {
   padding: .9375rem 1.875rem;
   margin: 0;
   margin-top: .625rem;
   border-left: .375rem solid #8785A2;
   background-color: #F7F5F1;
 }
-.md-preview__result p {
+.mdp__result p {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace,"Helvetica Neue",Arial,"Hiragino Sans GB",STHeiti,"Microsoft YaHei";;
   line-height: 1.5rem;
 }
-.md-preview__result > p {
+.mdp__result > p {
   margin: .9375rem 0;
   color: #666;
   font-size: .875rem;
 }
-.md-preview__result strong, .md-preview__result em {
+.mdp__result strong, .mdp__result em {
   padding: 0 .375rem;
   color: #515151;
 }
-.md-preview__result h2, 
-.md-preview__result h3, 
-.md-preview__result h4, 
-.md-preview__result h5, 
-.md-preview__result h6 {
+.mdp__result h2, 
+.mdp__result h3, 
+.mdp__result h4, 
+.mdp__result h5, 
+.mdp__result h6 {
   font-family: "Hiragino Sans GB",STHeiti,"Microsoft YaHei";
   color: #313131;
 }
-.md-preview__result h2 {
+.mdp__result h2 {
   line-height: 2rem;
   margin: 1.25rem 0 0;
   padding-bottom: .625rem;
   border-bottom: 2px solid #ddd;
 }
-.md-preview__result h3 {
+.mdp__result h3 {
   line-height: 1.75rem;
   margin: 1.125rem 0 .625rem;
 }
-.md-preview__result h4 {
+.mdp__result h4 {
   line-height: 1.625rem;
   margin: 1rem 0 .625rem;
 }
-.md-preview__result h5 {
+.mdp__result h5 {
   line-height: 1.5rem;
   margin: .875rem 0 .625rem;
 }
-.md-preview__result h6 {
+.mdp__result h6 {
   line-height: 1.375rem;
   margin: .75rem 0 .625rem;
 }
-.md-preview__result h3 + h4 {
+.mdp__result h3 + h4 {
   margin-top: 0;
 }
-.md-preview__result h4 + h5 {
+.mdp__result h4 + h5 {
   margin-top: 0;
 }
-.md-preview__result h5 + h6 {
+.mdp__result h5 + h6 {
   margin-top: 0;
 }
-.md-preview__result figure {
+.mdp__result figure {
   margin-top: .9375rem;
   text-align: center;
 }
-.md-preview__result figure img {
+.mdp__result figure img {
   vertical-align: top;
   border-radius: .3125rem;
 }
-.md-preview__result figure figcaption {
+.mdp__result figure figcaption {
   padding-top: .625rem;
 }
-.md-preview__result .figure-caption {
+.mdp__result .figure-caption {
   font-size: .75rem;
   color: #bfbfbf;
 }
 
 
-.md-preview__result .code-wrapper {
+.mdp__result .code-wrapper {
   line-height: 1.25rem;
   font-size: .75rem;
 }
 
 /* 列表样式 */
-.md-preview__result li {
+.mdp__result {
+  height: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid #888;
+  padding: 10px;
+  overflow: auto;
+}
+
+.mdp__result li {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace,"Helvetica Neue",Arial,"Hiragino Sans GB",STHeiti,"Microsoft YaHei";;
   color: #666;
   font-size: .875rem;
   line-height: 1.25rem;
   padding-top: .625rem;
 }
-.md-preview__result li:first-child {
+.mdp__result li:first-child {
   padding-top: 0px;
 }
-.md-preview__result > ol {
+.mdp__result > ol {
   margin-top: .9375rem;
 }
-.md-preview__result li > ul, 
-.md-preview__result li > ol {
+.mdp__result li > ul, 
+.mdp__result li > ol {
   position: relative;
   background-color: white;
   padding-left: 1.875rem;
 }
-.md-preview__result > ul {
+.mdp__result > ul {
   margin-top: .9375rem;
 }
-.md-preview__result > ul > li:before {
+.mdp__result > ul > li:before {
   content: '';
   float: left;
   width: .3125rem;
@@ -117,7 +125,7 @@ ul, ol {
   margin: .4375rem .4375rem 0;
   border-radius: 50%;
 }
-.md-preview__result li > ul > li:before {
+.mdp__result li > ul > li:before {
   content: '';
   float: left;
   width: .25rem;
@@ -127,7 +135,7 @@ ul, ol {
   border-radius: 50%;
 }
 /* 列表样式end */
-.md-preview__result .emphasize {
+.mdp__result .emphasize {
   display: inline-block;
   vertical-align: top;
   padding: 0 .3125rem;
@@ -137,12 +145,12 @@ ul, ol {
   margin: 0 .3125rem;
 }
 
-.md-preview__result a {
+.mdp__result a {
   color: #00BBF0;
   font-size: .875rem;
   margin: 0 5px;
 }
 
-.md-preview__result a:hover {
+.mdp__result a:hover {
   color: #FF63B5;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './markdown-parser.css'
 
-import {escapeHtmlFragment} from '../../utils'
+import {escapeHtmlFragment} from '../../../utils'
 
 // 防止XSS攻击
 class MarkdownParser extends React.Component {
@@ -10,12 +10,13 @@ class MarkdownParser extends React.Component {
     super(props)
     this.transformMarkdown = this.transformMarkdown().bind(this)
     this.handleTextChange = this.handleTextChange.bind(this)
-
-    this.props.notifyCompileResult = this.props.notifyCompileResult || (() => {})
   }
   handleTextChange (e) {
     let compileResult = this.transformMarkdown(e.target.value)
-    this.props.notifyCompileResult(compileResult)
+    let {notifyCompileResult} = this.props
+    if (notifyCompileResult && typeof notifyCompileResult === 'function') {
+      notifyCompileResult(compileResult)
+    }
   }
   transformMarkdown () {
     let strategies = [{
@@ -172,7 +173,7 @@ class MarkdownParser extends React.Component {
           return nestStrategies[n].template(catchGroup)
         })
       }
-      console.log(result)
+      // console.log(result)
       result = result.replace(/\\\*/g, '*')
       return result
     }
