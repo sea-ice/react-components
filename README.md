@@ -1,4 +1,4 @@
-# wheels
+# react-components
 
 ## Todo List
 
@@ -13,7 +13,7 @@
 ## Usage
 
 ```bash
-$ git clone https://github.com/sea-ice/wheels
+$ git clone https://github.com/sea-ice/react-components
 
 $ npm start
 ```
